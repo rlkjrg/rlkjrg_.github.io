@@ -183,7 +183,11 @@
   </div>
 </div>
 
+<!-- SOM DE CLIQUE -->
+<audio id="clickSound" src="click.mp3" preload="auto"></audio>
+
 <script>
+/* PARTICULAS */
 const canvas = document.getElementById("particles");
 const ctx = canvas.getContext("2d");
 
@@ -222,6 +226,15 @@ function animate(){
   requestAnimationFrame(animate);
 }
 animate();
+
+/* SOM DE CLIQUE */
+const clickSound = document.getElementById("clickSound");
+document.querySelectorAll(".links a").forEach(btn=>{
+  btn.addEventListener("click", ()=>{
+    clickSound.currentTime = 0;
+    clickSound.play();
+  });
+});
 </script>
 
 </body>
